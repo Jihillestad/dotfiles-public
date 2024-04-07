@@ -130,12 +130,46 @@ alias ls=eza
 alias l="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias cat=bat
+alias t=tmux
+alias ta ="tmux a -s"
+
+# Aliases for applications
 alias skim='open /Applications/Skim.app/'
 alias word='open /Applications/Microsoft\ Word.app'
 alias chrome='open /Applications/Google\ Chrome.app'
 alias cn="chrome -n"
+
+# Navigation
 alias sb="cd \$SECOND_BRAIN"
 alias in="cd \$SECOND_BRAIN/0-inbox/"
+alias ..="cd .."
+alias ....="cd ../.."
+alias ......="cd ../../.."
+
+# Git
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+alias gp="git push origin HEAD"
+alias gpu="git pull origin"
+alias gst="git status"
+alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+alias gdiff="git diff"
+alias gco="git checkout"
+alias gb='git branch'
+alias gba='git branch -a'
+alias gadd='git add'
+alias ga='git add -p'
+alias gcoall='git checkout -- .'
+alias gr='git remote'
+alias gre='git reset'
+
+
+# ricing
+alias eb='v ~/.bashrc'
+alias ez='v ~/.zshrc'
+alias ev='cd ~/.config/nvim/ && v init.lua'
+alias sbr='source ~/.bashrc'
+alias szr='source ~/.zshrc'
 
 # fzf aliases
 # use fp to do a fzf search and preview the files

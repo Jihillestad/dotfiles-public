@@ -45,16 +45,16 @@ return {
         -- Optional, if you want to change the date format of the default alias of daily notes.
         alias_format = "%d %B, %Y",
         -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-        template = nil,
+        template = "templates/1712359140-tmpl-daily.md",
       },
 
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
-      completion = {
-        -- Set to false to disable completion.
-        nvim_cmp = true,
-        -- Trigger completion at 2 chars.
-        min_chars = 2,
-      },
+      -- completion = {
+      -- Set to false to disable completion.
+      -- nvim_cmp = true,
+      -- Trigger completion at 2 chars.
+      -- min_chars = 2,
+      -- },
 
       new_notes_location = "notes_subdir",
 
@@ -102,7 +102,7 @@ return {
           note:add_alias(note.title)
         end
 
-        local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+        local out = { id = note.id, aliases = note.aliases, tags = note.tags, type = "" }
 
         -- `note.metadata` contains any manually added fields in the frontmatter.
         -- So here we just make sure those fields are kept in the frontmatter.
