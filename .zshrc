@@ -131,7 +131,7 @@ alias l="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias cat=bat
 alias t=tmux
-alias ta="tmux a -s "
+alias ta="tmux a -t "
 alias tn="tmux n -s "
 alias tkill="tmux kill-server"
 
