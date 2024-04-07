@@ -131,8 +131,8 @@ alias l="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias cat=bat
 alias t=tmux
-alias ta="tmux a -s"
-alias tn="tmux n -s"
+alias ta="tmux a -s "
+alias tn="tmux n -s "
 alias tkill="tmux kill-server"
 
 # Aliases for applications
@@ -150,7 +150,7 @@ alias ......="cd ../../.."
 
 # Git
 alias gc="git commit -m "
-alias gca="git commit -a -m"
+alias gca="git commit -a -m "
 alias gp="git push origin HEAD"
 alias gpu="git pull origin"
 alias gst="git status"
