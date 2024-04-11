@@ -86,7 +86,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search docker docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,7 +132,7 @@ alias lt="eza --tree --level=2 --long --icons --git"
 alias cat=bat
 alias t=tmux
 alias ta="tmux a -t "
-alias tn="tmux n -s "
+alias tn="tmux new -s "
 alias tkill="tmux kill-server"
 
 # Aliases for applications
@@ -184,3 +184,7 @@ alias vf='v $(fp)'
 # neofetch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### Fix for making Docker plugin work
+autoload -U compinit && compinit
+###
