@@ -167,6 +167,11 @@ alias gre='git reset'
 
 
 # ricing
+
+alias alday='sed -i "" "s/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyo-night\.toml\"\]/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyonight_day\.toml\"\]/" $DOTFILES/alacritty.toml'
+alias alnight='sed -i "" "s/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyonight_day\.toml\"\]/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyo-night\.toml\"\]/" $DOTFILES/alacritty.toml'
+alias termnight="$DOTFILES/scripts/termnight.sh"
+alias termday="$DOTFILES/scripts/termday.sh"
 alias eb='v ~/.bashrc'
 alias ez='v ~/.zshrc'
 alias ev='cd ~/.config/nvim/ && v init.lua'
