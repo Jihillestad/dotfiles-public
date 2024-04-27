@@ -4,6 +4,7 @@ return {
     vim.g.vimtex_view_method = "skim"
     vim.g.vimtex_skim_sync = 1
     vim.g.vimtex_skim_activate = 1
+    vim.g.vimtex_format_enabled = 1
 
     local au_group = vim.api.nvim_create_augroup("vimtex_events", {})
 
