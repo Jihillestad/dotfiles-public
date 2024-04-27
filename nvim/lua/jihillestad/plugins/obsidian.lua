@@ -188,12 +188,8 @@ return {
           ["x"] = { char = "", hl_group = "ObsidianDone" },
           [">"] = { char = "", hl_group = "ObsidianRightArrow" },
           ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-          -- Replace the above with this if you don't have a patched font:
-          -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
-          -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
-
-          -- You can also add more custom ones...
         },
+
         -- Use bullet marks for non-checkbox lists.
         bullets = { char = "•", hl_group = "ObsidianBullet" },
         external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
@@ -217,6 +213,15 @@ return {
           ObsidianHighlightText = { bg = "#75662e" },
         },
       },
+
+      -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
+      -- URL it will be ignored but you can customize this behavior here.
+      ---@param url string
+      follow_url_func = function(url)
+        -- Open the URL in the default web browser.
+        vim.fn.jobstart({ "open", url }) -- Mac OS
+        -- vim.fn.jobstart({"xdg-open", url})  -- linux
+      end,
 
       -- Specify how to handle attachments.
       attachments = {

@@ -4,7 +4,6 @@ return {
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
-    "hrsh7th/cmp-omni", -- improvements for LaTex
     "micangl/cmp-vimtex", -- improvements for Latex
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
@@ -55,26 +54,12 @@ return {
         }),
       },
     })
-    cmp.setup.filetype("tex", {
-      formatting = {
-        -- nvim-cmp overrides the standard completion-menu formatting. We use
-        -- a custom format function to preserve the format as provided by
-        -- VimTeX's omni completion function:
-        format = function(entry, vim_item)
-          vim_item.menu = ({
-            omni = (vim.inspect(vim_item.menu):gsub('%"', "")),
-            buffer = "[Buffer]",
-            -- formatting for other sources
-          })[entry.source.name]
-          return vim_item
-        end,
-      },
-      sources = {
-        { name = "omni", trigger_characters = { "{", "\\" } },
-        { name = "buffer" },
-        { name = "vimtex" }, -- snippets
-        -- other sources
-      },
-    })
+    -- cmp.setup.filetype("tex", {
+    --   sources = {
+    --     { name = "nvim_lsp" },
+    --     { name = "vimtex" }, -- snippets
+    --     { name = "buffer" },
+    --   },
+    -- })
   end,
 }
