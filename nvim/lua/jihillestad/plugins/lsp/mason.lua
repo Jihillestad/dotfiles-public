@@ -39,6 +39,7 @@ return {
         "pyright",
         "terraformls",
         "dockerls",
+        "marksman",
         -- "docker_compose_language_service",
       },
       -- auto-install configured servers (with lspconfig)
