@@ -41,8 +41,8 @@ multiplier = 3
 
 [window]
 decorations = "None"
-# opacity = 0.92
-# blur = true
+opacity = 0.90
+blur = true
 
 [window.dimensions]
 columns = 140
