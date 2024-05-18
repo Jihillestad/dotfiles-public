@@ -20,6 +20,7 @@ export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export LAB="$GHREPOS/lab"
 export SCRIPTS="$DOTFILES/scripts"
+export EDITOR="/opt/homebrew/bin/nvim"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -140,6 +141,7 @@ alias tkill="tmux kill-server"
 # Aliases for applications
 alias skim='open /Applications/Skim.app/'
 alias word='open /Applications/Microsoft\ Word.app'
+alias excel='open /Applications/Microsoft\ Excel.app'
 alias chrome='open /Applications/Google\ Chrome.app'
 alias cn="chrome -n"
 
@@ -184,7 +186,7 @@ alias szr='source ~/.zshrc'
 # use fp to do a fzf search and preview the files
 alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # search for a file with fzf and open it in vim
-alias vf='v $(fp)'
+alias vf='v "$(fp)"'
 
 # BRUKERNAVN=$(id -F)
 # toilet $BRUKERNAVN -k --width 120 --metal

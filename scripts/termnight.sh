@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i "" "s/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyonight_day\.toml\"\]/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyo-night\.toml\"\]/" $DOTFILES/alacritty.toml
+sed -i "" "s/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyonight_day\.toml\"\]/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyo-night\.toml\"\]/" $DOTFILES/alacritty/alacritty.toml
 #
 
 sed -i '' 's/style = "day",/style = "night",/' $DOTFILES/nvim/lua/jihillestad/plugins/colorscheme.lua

@@ -25,6 +25,7 @@ return {
         -- ensure these language parsers are installed
         ensure_installed = {
           "json",
+          "vimdoc",
           "javascript",
           "typescript",
           "tsx",
@@ -44,6 +45,7 @@ return {
           "query",
           "hcl",
           "terraform",
+          "python",
         },
         incremental_selection = {
           enable = true,
