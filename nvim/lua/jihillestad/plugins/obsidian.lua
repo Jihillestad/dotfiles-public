@@ -24,6 +24,7 @@ return {
     { "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", desc = "Quick Switch", mode = "n" },
     { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Show location list of backlinks", mode = "n" },
     { "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "Follow link under cursor", mode = "n" },
+    { "<leader>op", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image from Clipboard", mode = "n" },
   },
 
   -- see below for full list of options 👇

@@ -40,8 +40,8 @@ history = 10000
 multiplier = 3
 
 [window]
-decorations = "None"
-opacity = 0.90
+decorations = "Buttonless"
+opacity = 0.8
 blur = true
 
 [window.dimensions]
