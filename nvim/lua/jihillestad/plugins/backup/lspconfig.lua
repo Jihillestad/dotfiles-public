@@ -104,6 +104,7 @@ return {
     lspconfig["tailwindcss"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      filetypes = { "css" },
     })
 
     -- configure svelte server

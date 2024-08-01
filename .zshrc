@@ -9,6 +9,7 @@ fi
 
 # export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
