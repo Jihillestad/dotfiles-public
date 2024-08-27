@@ -36,4 +36,4 @@ yabai -m rule --add app="îterm2$" space=^1
 
 
 
-yabai -m config external_bar all:32:0
+# yabai -m config external_bar all:32:0
