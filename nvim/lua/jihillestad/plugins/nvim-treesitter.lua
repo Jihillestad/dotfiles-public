@@ -47,6 +47,7 @@ return {
           "hcl",
           "terraform",
           "python",
+          "powershell",
         },
         incremental_selection = {
           enable = true,
