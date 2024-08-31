@@ -36,7 +36,8 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "pyright",
+        -- "pyright",
+        "pylsp",
         "terraformls",
         "dockerls",
         "marksman",
@@ -52,7 +53,7 @@ return {
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
-        "pylint", -- python linter
+        -- "pylint", -- python linter
         "eslint_d", -- js linter
       },
     })
