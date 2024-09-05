@@ -27,7 +27,8 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "tsserver",
+        -- TODO: Add ts_ls here when Mason has implemented it
+        -- "tsserver", -- deprecated
         "html",
         "cssls",
         "tailwindcss",
