@@ -6,7 +6,6 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-tree/nvim-web-devicons",
     "ANGkeith/telescope-terraform-doc.nvim",
-    "cappyzawa/telescope-terraform.nvim",
     "folke/todo-comments.nvim",
   },
   config = function()
@@ -40,7 +39,6 @@ return {
 
     telescope.load_extension("fzf")
     telescope.load_extension("terraform_doc")
-    telescope.load_extension("terraform")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
