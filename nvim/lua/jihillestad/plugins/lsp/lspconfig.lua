@@ -81,11 +81,6 @@ return {
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
       function(server_name)
-        -- TODO: Check if Mason will implement a fix instead of this workaround
-        -- tsserver deprecation workaround
-        if server_name == "tsserver" then
-          server_name = "ts_ls"
-        end
         lspconfig[server_name].setup({
           capabilities = capabilities,
         })
