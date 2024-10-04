@@ -23,7 +23,7 @@ open_file() {
 	touch "$1/cl-$filename-content.tex"
 
 	# create unique identifier and links section
-	timestamp="$(date +"%Y%m%d%H%M")"
+	timestamp="$(date +"%Y/%m/%d")"
 
 	# format the files
 	{
@@ -46,8 +46,8 @@ open_file() {
     echo "\photo[64pt][0pt]{"./JannIdar.jpg"}"
     echo -en "\n"
     echo "\begin{document}"
-    echo "\recipient{[Recruiter]}{CompanyName\\\Address\\\ZipCode City}"
-    echo "\date{04.04.2024}"
+    echo "\recipient{[Recruiter]}{$filename\\\Address\\\ZipCode City}"
+    echo "\date{$timestamp}"
     echo "\opening{Dear Sir/Madam,}"
     echo "\closing{Sincerely yours,}"
     echo -en "\n"

@@ -121,6 +121,7 @@ ctrl-alt-m = 'workspace M'
 ctrl-alt-n = 'workspace N'
 ctrl-alt-p = 'workspace P'
 ctrl-alt-r = 'workspace R'
+ctrl-alt-s = 'workspace S'
 ctrl-alt-t = 'workspace T'
 ctrl-alt-v = 'workspace V'
 
@@ -140,6 +141,7 @@ ctrl-alt-shift-m = 'move-node-to-workspace M'
 ctrl-alt-shift-n = 'move-node-to-workspace N'
 ctrl-alt-shift-p = 'move-node-to-workspace P'
 ctrl-alt-shift-r = 'move-node-to-workspace R'
+ctrl-alt-shift-a = 'move-node-to-workspace S'
 ctrl-alt-shift-t = 'move-node-to-workspace T'
 ctrl-alt-shift-v = 'move-node-to-workspace V'
 
@@ -187,8 +189,20 @@ if.app-id = 'com.apple.MobileSMS'
 run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace N'
+
+[[on-window-detected]]
+if.app-id = 'com.facebook.archon'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
 if.app-id = 'com.garmin.renu.client'
