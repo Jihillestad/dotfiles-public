@@ -23,7 +23,7 @@ return {
     { "<leader>oo", "<cmd>ObsidianSearch<cr>", desc = "Search Obsidian notes", mode = "n" },
     { "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", desc = "Quick Switch", mode = "n" },
     { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Show location list of backlinks", mode = "n" },
-    { "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "Follow link under cursor", mode = "n" },
+    { "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "Open Obsidian Template", mode = "n" },
     { "<leader>op", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image from Clipboard", mode = "n" },
   },
 
@@ -35,10 +35,6 @@ return {
         {
           name = "personal",
           path = "~/vaults/personal",
-        },
-        {
-          name = "work",
-          path = "~/vaults/work",
         },
       },
       notes_subdir = "0-inbox",
