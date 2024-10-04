@@ -40,3 +40,17 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- HACK: make sure docker-compose.yaml is set as a yaml.docker-compose file. Or else docker_compose_language server wont attach to the buffer
+function docker_fix()
+  local Filename = vim.fn.expand("%:t")
+
+  if Filename == "docker-compose.yaml" then
+    vim.bo.filetype = "yaml.docker-compose"
+    print("matched!")
+  else
+    print(Filename)
+  end
+end
+
+vim.cmd([[au BufRead * lua docker_fix()]])
