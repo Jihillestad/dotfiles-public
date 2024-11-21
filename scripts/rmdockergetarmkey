@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm ./Dockerfile
+rm ./tfgetarmkey.sh
+docker rm -f azure-cli

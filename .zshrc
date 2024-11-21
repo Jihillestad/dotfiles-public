@@ -170,6 +170,16 @@ alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
 
+# Dockerized Azure CLI
+alias exparm="export ARM_ACCESS_KEY=$(docker exec azure-cli sh -c 'cat /tmp/ARM_ACCESS_KEY.txt')"
+
+# Dockerized Terraform
+alias dtfinit="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest init"
+alias dtfinitrc="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest init -reconfigure"
+alias dtfplan="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest plan -out main.tfplan"
+alias dtfapply"docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest apply main.tfplan"
+alias dtfdestroy="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest destroy"
+alias dtfrefresh="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest refresh"
 
 # ricing
 
@@ -273,3 +283,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
