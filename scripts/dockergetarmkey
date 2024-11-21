@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Create the Dockerfile
+cat <<EOF > Dockerfile
+FROM mcr.microsoft.com/azure-cli:latest
+
+WORKDIR /app
+COPY ./tfgetarmkey.sh /app/tfgetarmkey.sh
+RUN chmod +x /app/tfgetarmkey.sh
+EOF
+
+# Create the tfgetarmkey.sh script
+cat <<'EOF' > tfgetarmkey.sh
+#!/bin/bash
+
+# Log in to Azure CLI
+az login
+
+# Define the Key Vault and secret details
+vault_name=tfstatekv29513
+secret_name=tfstatesecret
+
+# Retrieve the ARM_ACCESS_KEY from Azure Key Vault
+export ARM_ACCESS_KEY=$(az keyvault secret show \
+  --vault-name "$vault_name" \
+  --name "$secret_name" \
+  --query "value" -o tsv)
+
+# Save the key to a temporary file for debugging or other use
+echo "$ARM_ACCESS_KEY" > /tmp/ARM_ACCESS_KEY.txt
+EOF
+
+docker build -t azure-cli .
+docker run -itd --name azure-cli azure-cli
+docker exec -it azure-cli /app/tfgetarmkey.sh
