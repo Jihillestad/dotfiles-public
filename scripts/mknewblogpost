@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Some of this is "stolen" from https://github.com/mischavandenburg/dotfiles/blob/main/scripts/zet
+# to get started
+
+BLOGPOSTS="$HOME/projects/mdblog/content/blog/"
+
+# function to prompt for blog post name
+get_filename() {
+	read -p "Blog Post name: " filename
+	echo "$filename"
+}
+
+# function to create and open a file in the specified directory
+open_file() {
+  TITLE=$(echo $filename | tr "-" " ")
+
+	# Cd into the directory
+	cd "$1" || exit
+
+  # Create GIT branch
+  git checkout -b "feature/$filename"
+
+	# Create the file in the specified directory
+	touch "$1/$filename.mdx"
+
+	# create unique identifier and links section
+	timestamp="$(date +"%Y-%m-%d")"
+
+	# format the files
+	{
+    echo "---"
+    echo "title: $TITLE"
+    echo "description: lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    echo "date: $timestamp"
+    echo "published: true"
+    echo "tags: ["examle", "example2"]"
+    echo "---"
+    echo -en "\n"
+	} >>"$1/$filename.mdx"
+
+	# Open the file in Neovim
+	nvim '+ normal ggzzi' -O "$1/$filename.mdx"
+}
+
+# Prompt the user if no filename is provided
+if [[ $# -eq 0 ]]; then
+	filename=$(get_filename)
+fi
+
+# if more than one argument is given, print error message and stop script
+if [[ $# -gt 1 ]]; then
+	echo "Please provide only one filename separated by dashes, without .mdx extension."
+	echo "Example: mknewblogpost my-new-blog-post"
+	exit 1
+fi
+
+# set filename to the argument given to the script
+if [[ $# -eq 1 ]]; then
+	filename=$1
+fi
+
+open_file "$BLOGPOSTS"
