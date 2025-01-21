@@ -23,6 +23,10 @@ export LAB="$GHREPOS/lab"
 export SCRIPTS="$DOTFILES/scripts"
 export EDITOR="/opt/homebrew/bin/nvim"
 
+# Node NVM Path
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
