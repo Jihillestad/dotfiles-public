@@ -3,7 +3,7 @@
 # Some of this is "stolen" from https://github.com/mischavandenburg/dotfiles/blob/main/scripts/zet
 # to get started
 
-BLOGPOSTS="$HOME/projects/mdblog/content/blog/"
+BLOGPOSTS="$GHREPOS/mdblog/content/blog/"
 
 # function to prompt for blog post name
 get_filename() {
