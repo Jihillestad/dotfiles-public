@@ -78,71 +78,34 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
-      -- default handler for installed servers
-      function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-        })
-      end,
-      -- ["svelte"] = function()
-      --   -- configure svelte server
-      --   lspconfig["svelte"].setup({
-      --     capabilities = capabilities,
-      --     on_attach = function(client, bufnr)
-      --       vim.api.nvim_create_autocmd("BufWritePost", {
-      --         pattern = { "*.js", "*.ts" },
-      --         callback = function(ctx)
-      --           -- Here use ctx.match instead of ctx.file
-      --           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-      --         end,
-      --       })
-      --     end,
-      --   })
-      -- end,
-      -- ["graphql"] = function()
-      --   -- configure graphql language server
-      --   lspconfig["graphql"].setup({
-      --     capabilities = capabilities,
-      --     filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-      --   })
-      -- end,
-      ["emmet_ls"] = function()
-        -- configure emmet language server
-        lspconfig["emmet_ls"].setup({
-          capabilities = capabilities,
-          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-        })
-      end,
-      ["lua_ls"] = function()
-        -- configure lua server (with special settings)
-        lspconfig["lua_ls"].setup({
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              -- make the language server recognize "vim" global
-              diagnostics = {
-                globals = { "vim" },
-              },
-              completion = {
-                callSnippet = "Replace",
-              },
+    mason_lspconfig.get_installed_servers() -- get a list of installed servers
+    for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
+      local opts = {
+        capabilities = capabilities,
+      }
+
+      if server_name == "emmet_ls" then
+        opts.filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" }
+      elseif server_name == "lua_ls" then
+        opts.settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+            completion = {
+              callSnippet = "Replace",
             },
           },
-        })
-      end,
-      ["terraformls"] = function()
-        -- configure terraform server
-        lspconfig["terraformls"].setup({
-          capabilities = capabilities,
-          init_options = {
-            experimentalFeatures = {
-              prefillRequiredFields = true,
-            },
+        }
+      elseif server_name == "terraformls" then
+        opts.init_options = {
+          experimentalFeatures = {
+            prefillRequiredFields = true,
           },
-        })
-      end,
-      -- Configure Terraform server
-    })
+        }
+      end
+
+      lspconfig[server_name].setup(opts)
+    end
   end,
 }
