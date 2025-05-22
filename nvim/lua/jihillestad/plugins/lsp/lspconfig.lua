@@ -105,7 +105,7 @@ return {
         }
       end
 
-      lspconfig[server_name].setup(opts)
+      -- lspconfig[server_name].setup(opts)
     end
   end,
 }
