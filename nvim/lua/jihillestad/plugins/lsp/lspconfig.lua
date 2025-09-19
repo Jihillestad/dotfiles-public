@@ -97,12 +97,12 @@ return {
             },
           },
         }
-      elseif server_name == "terraformls" then
-        opts.init_options = {
-          experimentalFeatures = {
-            prefillRequiredFields = true,
-          },
-        }
+        -- elseif server_name == "terraformls" then
+        --   opts.init_options = {
+        --     experimentalFeatures = {
+        --       prefillRequiredFields = true,
+        --     },
+        --   }
       end
 
       -- lspconfig[server_name].setup(opts)
