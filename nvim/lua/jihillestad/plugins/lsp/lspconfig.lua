@@ -78,34 +78,49 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.get_installed_servers() -- get a list of installed servers
-    for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
-      local opts = {
-        capabilities = capabilities,
-      }
-
-      if server_name == "emmet_ls" then
-        opts.filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" }
-      elseif server_name == "lua_ls" then
-        opts.settings = {
+    -- Define server configurations
+    local server_configs = {
+      emmet_ls = {
+        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+      },
+      lua_ls = {
+        settings = {
           Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-            completion = {
-              callSnippet = "Replace",
+            diagnostics = { globals = { "vim" } },
+            completion = { callSnippet = "Replace" },
+            workspace = { checkThirdParty = false },
+          },
+        },
+      },
+      tsserver = {
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayFunctionParameterTypeHints = true,
             },
           },
-        }
-        -- elseif server_name == "terraformls" then
-        --   opts.init_options = {
-        --     experimentalFeatures = {
-        --       prefillRequiredFields = true,
-        --     },
-        --   }
-      end
+        },
+      },
+      terraformls = {
+        init_options = {
+          experimentalFeatures = {
+            prefillRequiredFields = true,
+          },
+        },
+      },
+    }
 
-      -- lspconfig[server_name].setup(opts)
+    -- Configure and enable servers
+    for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
+      local config = vim.tbl_deep_extend("force", {
+        name = server_name,
+        capabilities = capabilities,
+        root_dir = vim.fs.root,
+      }, server_configs[server_name] or {})
+
+      vim.lsp.config(server_name, config)
+      vim.lsp.enable(server_name)
     end
   end,
 }
