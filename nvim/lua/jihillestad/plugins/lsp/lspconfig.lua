@@ -116,7 +116,7 @@ return {
       local config = vim.tbl_deep_extend("force", {
         name = server_name,
         capabilities = capabilities,
-        root_dir = vim.fs.root,
+        -- root_dir = vim.fs.root,
       }, server_configs[server_name] or {})
 
       vim.lsp.config(server_name, config)
