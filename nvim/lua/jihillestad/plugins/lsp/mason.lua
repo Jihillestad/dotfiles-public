@@ -35,13 +35,13 @@ return {
         "lua_ls",
         -- "graphql",
         "emmet_ls",
-        "prismals",
+        -- "prismals",
         -- "pyright",
         "pylsp",
         "terraformls",
         "dockerls",
         "docker_compose_language_service",
-        "marksman",
+        -- "marksman",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = false, -- not the same as ensure_installed
