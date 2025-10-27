@@ -23,7 +23,7 @@ open_file() {
 	touch "$1/cl-$filename-content.tex"
 
 	# create unique identifier and links section
-	timestamp="$(date +"%m.%d.%Y")"
+	timestamp="$(date +"%d.%m.%Y")"
 	# timestamp="$(date +"%Y%m%d%H%M")"
 
 	# format the files
