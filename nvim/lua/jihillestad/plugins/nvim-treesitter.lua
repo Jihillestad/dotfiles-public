@@ -21,6 +21,7 @@ return {
 
         highlight = {
           enable = true,
+          disable = { "latex" },
         },
 
         -- enable indentation
