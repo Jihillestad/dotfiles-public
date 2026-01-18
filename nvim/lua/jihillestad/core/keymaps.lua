@@ -17,16 +17,19 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
--- move lines up and down
-keymap.set("n", "<leader>lk", "ddkP")
-keymap.set("n", "<leader>lj", "ddp")
-
--- delete single character without copying into register
--- keymap.set("n", "x", '"_x')
+-- Move lines up/down
+vim.keymap.set("n", "<leader>lj", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<leader>lk", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<leader>lj", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<leader>lk", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+
+-- Better indenting in visual mode
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically

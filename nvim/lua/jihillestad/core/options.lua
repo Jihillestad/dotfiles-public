@@ -54,6 +54,28 @@ vim.cmd([[
   augroup END
 ]])
 
+-- File Handling
+opt.backup = false -- Don't create backup files
+opt.writebackup = false -- Don't backup before overwriting
+opt.swapfile = false -- Don't create swap files
+opt.undofile = true -- Persistent undo
+opt.updatetime = 300 -- Time in ms to trigger CursorHold
+opt.timeoutlen = 500 -- Time in ms to wait for mapped sequence
+opt.ttimeoutlen = 0 -- No wait for key code sequences
+opt.autoread = true -- Auto-reload file if changed outside
+opt.autowrite = false -- Don't auto-save on some events
+opt.diffopt:append("vertical") -- Vertical diff splits
+opt.diffopt:append("algorithm:patience") -- Better diff algorithm
+opt.diffopt:append("linematch:60") -- Better diff highlighting (smart line matching)
+
+-- Set undo directory and ensure it exists
+local undodir = "~/.local/share/nvim/undodir" -- Undo directory path
+opt.undodir = vim.fn.expand(undodir) -- Expand to full path
+local undodir_path = vim.fn.expand(undodir)
+if vim.fn.isdirectory(undodir_path) == 0 then
+  vim.fn.mkdir(undodir_path, "p") -- Create if not exists
+end
+
 -- Behavior settingds
 opt.errorbells = false -- disable error bells
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
