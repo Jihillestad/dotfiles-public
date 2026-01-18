@@ -8,6 +8,9 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
+    -- make nvim-tree transparent
+    vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
+
     -- change color for arrows in tree to light blue
     -- vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
     -- vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
@@ -32,6 +35,7 @@ return {
           },
         },
       },
+
       -- disable window_picker for
       -- explorer to work well with
       -- window splits
