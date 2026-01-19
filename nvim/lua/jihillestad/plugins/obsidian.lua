@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Obsidian.nvim Configuration
+-- About: This file configures the Obsidian.nvim plugin for integrating Obsidian notes with Neovim.
+-- ==================================================================================================
+
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit

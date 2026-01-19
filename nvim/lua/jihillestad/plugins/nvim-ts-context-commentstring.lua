@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: nvim-ts-context-commentstring Configuration
+-- About: This file configures the nvim-ts-context-commentstring plugin for Neovim.
+-- ==================================================================================================
+
 return {
   "JoosepAlviste/nvim-ts-context-commentstring",
   event = { "BufReadPre", "BufNewFile" },

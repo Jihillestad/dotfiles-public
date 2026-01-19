@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: substitute.nvim Configuration
+-- About: This file configures the substitute.nvim plugin for enhanced substitution in Neovim.
+-- ==================================================================================================
+
 return {
   "gbprod/substitute.nvim",
   event = { "BufReadPre", "BufNewFile" },

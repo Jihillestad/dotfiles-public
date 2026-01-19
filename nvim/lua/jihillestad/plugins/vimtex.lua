@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: VimTeX Configuration
+-- About: This file configures the VimTeX plugin for LaTeX support in NeoVim.
+-- ==================================================================================================
+
 return {
   "lervag/vimtex",
   init = function()

@@ -1,3 +1,9 @@
+-- ==================================================================================================
+-- Title: nvim-ts-autotag Configuration
+-- About: This file configures the nvim-ts-autotag plugin for auto-closing and renaming HTML tags in
+-- Neovim.
+-- ==================================================================================================
+
 return {
   "windwp/nvim-ts-autotag",
   config = function()

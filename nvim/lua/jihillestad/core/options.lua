@@ -105,8 +105,8 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 -- Folding Settings
-opt.foldmethod = "expr" -- Use expression for folding
-opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Use treesitter for folding
+-- opt.foldmethod = "expr" -- Use expression for folding
+-- opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Use treesitter for folding
 opt.foldlevel = 99 -- Keep all folds open by default
 
 -- File Handling

@@ -28,3 +28,38 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     })
   end,
 })
+
+-- Enable Treesitter features for specific filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "javascript",
+    "typescript",
+    "tsx",
+    "json",
+    "yaml",
+    "html",
+    "css",
+    "lua",
+    "python",
+    "markdown",
+    "markdown_inline",
+    "svelte",
+    "graphql",
+    "bash",
+    "vim",
+    "dockerfile",
+    "gitignore",
+    "hcl",
+    "terraform",
+    "powershell",
+  },
+  callback = function()
+    -- syntax highlighting, provided by Neovim
+    vim.treesitter.start()
+    -- folds, provided by Neovim
+    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.wo.foldmethod = "expr"
+    -- indentation, provided by nvim-treesitter
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})

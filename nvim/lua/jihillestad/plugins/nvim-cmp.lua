@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: nvim-cmp Configuration
+-- About: This file configures the nvim-cmp plugin for autocompletion in NeoVim.
+-- ==================================================================================================
+
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",

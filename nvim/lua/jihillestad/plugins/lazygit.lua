@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: LazyGit Neovim Plugin Configuration
+-- About: This file configures the LazyGit plugin for Neovim integration.
+-- ==================================================================================================
+
 return {
   "kdheepak/lazygit.nvim",
   cmd = {

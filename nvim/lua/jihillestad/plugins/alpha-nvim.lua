@@ -1,3 +1,9 @@
+-- ==================================================================================================
+-- Title: alpha-nvim Configuration
+-- About: This file configures the alpha-nvim plugin for Neovim. Provides a customizable start
+-- screen.
+-- ==================================================================================================
+
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",

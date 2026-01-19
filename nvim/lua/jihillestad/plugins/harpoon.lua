@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: This file configures the Harpoon plugin for quick file navigation
+-- About: Harpoon Configuration
+-- ==================================================================================================
+
 return {
   "ThePrimeagen/harpoon",
   dependencies = {

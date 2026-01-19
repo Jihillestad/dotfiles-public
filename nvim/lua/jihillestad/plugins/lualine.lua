@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Lualine Configuration
+-- About: This file configures the Lualine plugin for a customizable status line in Ne
+-- ==================================================================================================
+
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },

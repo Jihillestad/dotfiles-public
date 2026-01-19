@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Todo Comments Plugin Configuration
+-- About: This file configures the todo-comments.nvim plugin for Neovim.
+-- ==================================================================================================
+
 return {
   "folke/todo-comments.nvim",
   event = { "BufReadPre", "BufNewFile" },
