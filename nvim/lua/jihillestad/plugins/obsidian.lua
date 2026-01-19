@@ -231,6 +231,7 @@ return {
 
       -- Specify how to handle attachments.
       attachments = {
+        confirm_img_paste = true, -- Set to false to skip the confirmation dialog when pasting images.
         -- The default folder to place images in via `:ObsidianPasteImg`.
         -- If this is a relative path it will be interpreted as relative to the vault root.
         -- You can always override this per image by passing a full path to the command instead of just a filename.
