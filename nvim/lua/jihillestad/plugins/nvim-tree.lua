@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: nvim-tree.lua Configuration
+-- About: This file configures the nvim-tree.lua plugin for file exploration in Neovim
+-- ==================================================================================================
+
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },

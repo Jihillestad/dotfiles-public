@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: nvim-lint Configuration
+-- About: This file configures the nvim-lint plugin for linting support in NeoVim.
+-- ==================================================================================================
+
 return {
   "mfussenegger/nvim-lint",
   lazy = true,

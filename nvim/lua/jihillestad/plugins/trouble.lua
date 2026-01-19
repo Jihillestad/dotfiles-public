@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Trouble.nvim Configuration
+-- About: This file configures the Trouble.nvim plugin for enhanced diagnostics and lists in Neovim.
+-- ==================================================================================================
+
 return {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },

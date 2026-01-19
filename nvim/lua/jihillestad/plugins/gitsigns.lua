@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Gitsigns Configuration
+-- About: This file configures the gitsigns.nvim plugin for Git integration in Neov
+-- ==================================================================================================
+
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },

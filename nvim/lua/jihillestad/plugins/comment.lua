@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Comment.nvim Configuration
+-- About: This file configures the Comment.nvim plugin for easy commenting in Neovim.
+-- ==================================================================================================
+
 return {
   "numToStr/Comment.nvim",
   event = { "BufReadPre", "BufNewFile" },

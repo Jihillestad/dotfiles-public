@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: nvim-autopairs Configuration
+-- About: This file configures the nvim-autopairs plugin for automatic insertion of pairs in Neovim.
+-- ==================================================================================================
+
 return {
   "windwp/nvim-autopairs",
   event = { "InsertEnter" },

@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Auto Session Configuration
+-- About: This file configures the auto-session plugin for automatic session management in Neovim
+-- ==================================================================================================
+
 return {
   "rmagatti/auto-session",
   config = function()

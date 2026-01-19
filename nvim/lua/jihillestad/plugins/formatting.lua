@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Tilte: Neovim Conform Formatting Configuration
+-- About: This file configures the conform.nvim plugin for code formatting in Neovim
+-- ==================================================================================================
+
 return {
   "stevearc/conform.nvim",
   lazy = true,

@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: nvim-web-devicons configuration
+-- About: This file configures the nvim-web-devicons plugin to add custom icons for file types.
+-- ==================================================================================================
+
 return {
   "nvim-tree/nvim-web-devicons",
   config = function()

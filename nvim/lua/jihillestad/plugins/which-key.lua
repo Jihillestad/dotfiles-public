@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: WhichKey.nvim Configuration
+-- About: This file configures the WhichKey.nvim plugin for displaying key bindings in Neovim.
+-- ==================================================================================================
+
 return {
   "folke/which-key.nvim",
   dependencies = {

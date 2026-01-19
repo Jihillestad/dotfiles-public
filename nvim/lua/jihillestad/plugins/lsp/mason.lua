@@ -1,3 +1,9 @@
+-- ==================================================================================================
+-- Title: Mason.nvim Configuration
+-- About: This file configures the Mason.nvim plugin for managing LSP servers, DAP servers, linters,
+-- and formatters.
+-- ==================================================================================================
+
 return {
   "williamboman/mason.nvim",
   dependencies = {

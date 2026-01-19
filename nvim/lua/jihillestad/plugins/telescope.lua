@@ -1,3 +1,9 @@
+-- ==================================================================================================
+-- Title: Telescope Configuration
+-- About: This file configures the Telescope plugin for fuzzy finding and more in Neovim
+-- ==================================================================================================
+
+-- TODO: Add flash.nvim integration for enhanced search highlighting.
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {

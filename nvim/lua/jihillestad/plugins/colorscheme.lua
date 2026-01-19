@@ -1,3 +1,8 @@
+-- ==================================================================================================
+-- Title: Colorscheme Configuration
+-- About: This file configures the tokyonight.nvim colorscheme for Neovim
+-- ==================================================================================================
+
 return {
   {
     "folke/tokyonight.nvim",

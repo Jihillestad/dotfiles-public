@@ -1,3 +1,9 @@
+-- ==================================================================================================
+-- Title: nvim-lspconfig Configuration
+-- About: This file configures the nvim-lspconfig plugin for Neovim's built-in
+-- Language Server Protocol (LSP)
+-- ==================================================================================================
+
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
