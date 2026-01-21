@@ -5,11 +5,12 @@
 
 return {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  event = "InsertEnter", -- load nvim-cmp when entering insert mode
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     "micangl/cmp-vimtex", -- improvements for Latex
+    "zbirenbaum/copilot-cmp", -- GitHub Copilot source for nvim-cmp
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
@@ -23,7 +24,7 @@ return {
     local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-    require("luasnip.loaders.from_vscode").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load() --
 
     cmp.setup({
       completion = {
@@ -45,11 +46,12 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" }, -- snippets
-        { name = "vimtex" }, -- snippets
-        { name = "buffer" }, -- text within current buffer
-        { name = "path" }, -- file system paths
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "luasnip", group_index = 2 }, -- snippets
+        { name = "vimtex", group_index = 2 }, -- snippets
+        { name = "copilot", group_index = 2 }, -- GitHub Copilot
+        { name = "buffer", group_index = 2 }, -- text within current buffer
+        { name = "path", group_index = 2 }, -- file system paths
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
