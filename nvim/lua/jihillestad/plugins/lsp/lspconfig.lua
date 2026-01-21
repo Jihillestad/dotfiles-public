@@ -119,6 +119,9 @@ return {
           },
         },
       },
+      copilot = {
+        enabled = false,
+      },
     }
 
     -- Configure and enable servers
