@@ -1,5 +1,5 @@
 -- ==================================================================================================
--- Title: Copilp configuration
+-- Title: Copilot configuration
 -- About: Configuration for GitHub Copilot plugin for Neovim
 -- ==================================================================================================
 

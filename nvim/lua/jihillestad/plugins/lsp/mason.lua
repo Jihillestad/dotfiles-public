@@ -33,20 +33,17 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "ts_ls",
-        "html",
-        "cssls",
-        "tailwindcss",
-        -- "svelte",
-        "lua_ls",
-        -- "graphql",
-        "emmet_ls",
-        -- "prismals",
-        -- "pyright",
-        "pylsp",
-        "terraformls",
-        "dockerls",
-        "docker_compose_language_service",
+        "texlab", -- LaTeX LSP
+        "ts_ls", -- Typescript LSP
+        "html", -- HTML LSP
+        "cssls", -- CSS LSP
+        "tailwindcss", -- CSS LSP
+        "lua_ls", -- Lua LSP
+        "emmet_ls", -- Emmet LSP
+        "basedpyright", -- python lsp
+        "terraformls", -- Terraform LSP
+        "dockerls", -- Docker LSP
+        "docker_compose_language_service", -- Docker Compose LSP
         -- "marksman",
       },
       -- auto-install configured servers (with lspconfig)
@@ -59,7 +56,6 @@ return {
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
-        "basedpyright", -- python lsp
         "eslint_d", -- js linter
       },
     })
