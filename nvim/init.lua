@@ -1,10 +1,7 @@
-require("jihillestad.core")
-require("jihillestad.lazy")
+require("config.lazy")
 
--- Filtyper for Terraform. Skal flyttes til andre konfigfiler
-vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
-vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile *.mdx set filetype=markdown]])
-vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+-- bullets.vim has a known issue where it can interfere with the new snacks
+-- picker by folke, preventing you from selecting a file with <CR> when in
+-- insert mode. To mitigate this, you can disable bullets in empty buffers by
+-- adding the following line to your init.lua:
+-- vim.g.bullets_enable_in_empty_buffers = 0

@@ -1,0 +1,31 @@
+-- =============================================================================
+-- Title: bullets.lua
+-- File: ~/repos/github.com/jihillestad/dotfiles/nvim/lua/plugins/bullets.lua
+-- About: This plugin automates creating new bullets when adding a new line
+-- after a bullet
+-- Credits: S special thanks to linkarzu for providing great dotfiles. I used
+-- his configration to mitigate a known bug in this plugin.
+-- Sources: https://github.com/linkarzu/dotfiles-latest/
+-- =============================================================================
+
+return {
+	"bullets-vim/bullets.vim",
+	-- NOTE: enable the plugin only for specific filetypes, if you don't do this,
+	-- and you use the new snacks picker by folke, you won't be able to select a
+	-- file with <CR> when in insert mode, only in normal mode
+	-- https://github.com/folke/snacks.nvim/issues/812
+	--
+	-- This didn't work, added vim.g.bullets_enable_in_empty_buffers = 0 to
+	-- ~/github/dotfiles-latest/neovim/neobean/init.lua
+	-- ft = { "markdown", "text", "gitcommit", "scratch" },
+	config = function()
+		-- Disable deleting the last empty bullet when pressing <cr> or 'o'
+		-- default = 1
+		-- 2 works similar ot Obsidian https://github.com/bullets-vim/bullets.vim/pull/163
+		vim.g.bullets_delete_last_bullet_if_empty = 2
+
+		-- (Optional) Add other configurations here
+		-- For example, enabling/disabling mappings
+		-- vim.g.bullets_set_mappings = 1
+	end,
+}
