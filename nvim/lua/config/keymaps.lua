@@ -131,56 +131,6 @@ vim.keymap.set("n", "<leader>md", function()
 	vim.api.nvim_buf_set_lines(current_buffer, start_row, end_row + 1, false, new_lines)
 end, { desc = "[P]Toggle bullet point (dash)" })
 
--- Toggle bullet point at the beginning of the current line in normal mode
--- If in a multiline paragraph, make sure the cursor is on the line at the top
--- "d" is for "dash" lamw25wmal
-vim.keymap.set("n", "<leader>md", function()
-	-- Get the current cursor position
-	local cursor_pos = vim.api.nvim_win_get_cursor(0)
-	local current_buffer = vim.api.nvim_get_current_buf()
-	local start_row = cursor_pos[1] - 1
-	local col = cursor_pos[2]
-	-- Get the current line
-	local line = vim.api.nvim_buf_get_lines(current_buffer, start_row, start_row + 1, false)[1]
-	-- Check if the line already starts with a bullet point
-	if line:match("^%s*%-") then
-		-- Remove the bullet point from the start of the line
-		line = line:gsub("^%s*%-", "")
-		vim.api.nvim_buf_set_lines(current_buffer, start_row, start_row + 1, false, { line })
-		return
-	end
-	-- Search for newline to the left of the cursor position
-	local left_text = line:sub(1, col)
-	local bullet_start = left_text:reverse():find("\n")
-	if bullet_start then
-		bullet_start = col - bullet_start
-	end
-	-- Search for newline to the right of the cursor position and in following lines
-	local right_text = line:sub(col + 1)
-	local bullet_end = right_text:find("\n")
-	local end_row = start_row
-	while not bullet_end and end_row < vim.api.nvim_buf_line_count(current_buffer) - 1 do
-		end_row = end_row + 1
-		local next_line = vim.api.nvim_buf_get_lines(current_buffer, end_row, end_row + 1, false)[1]
-		if next_line == "" then
-			break
-		end
-		right_text = right_text .. "\n" .. next_line
-		bullet_end = right_text:find("\n")
-	end
-	if bullet_end then
-		bullet_end = col + bullet_end
-	end
-	-- Extract lines
-	local text_lines = vim.api.nvim_buf_get_lines(current_buffer, start_row, end_row + 1, false)
-	local text = table.concat(text_lines, "\n")
-	-- Add bullet point at the start of the text
-	local new_text = "- " .. text
-	local new_lines = vim.split(new_text, "\n")
-	-- Set new lines in buffer
-	vim.api.nvim_buf_set_lines(current_buffer, start_row, end_row + 1, false, new_lines)
-end, { desc = "[P]Toggle bullet point (dash)" })
-
 -- HACK: Manage Markdown tasks in Neovim similar to Obsidian | Telescope to List Completed and Pending Tasks
 -- https://youtu.be/59hvZl077hM
 --
@@ -386,18 +336,52 @@ vim.keymap.set("n", "<M-x>", function()
 	vim.cmd("loadview")
 end, { desc = "[P]Toggle task and move it to 'done'" })
 
+--Helper function to disable Harper for non-supported languages
+local function disable_harper()
+	local clients = vim.lsp.get_clients({ bufnr = 0, name = "harper_ls" })
+	if #clients > 0 then
+		for _, client in ipairs(clients) do
+			vim.lsp.buf_detach_client(0, client.id)
+		end
+		vim.cmd("echo 'Unsupported language, Harper LSP disabled'")
+	else
+		vim.cmd("echo 'Harper LSP was not running'")
+	end
+end
+-- local function disable_harper()
+-- 	local get_clients = vim.lsp.get_clients or vim.lsp.get_active_clients
+-- 	local bufnr = vim.api.nvim_get_current_buf()
+-- 	local clients = get_clients({ bufnr = bufnr })
+--
+-- 	local found = false
+-- 	for _, client in ipairs(clients) do
+-- 		-- Match harper_ls or any variation
+-- 		if client.name:match("harper") then
+-- 			vim.lsp.buf_detach_client(bufnr, client.id)
+-- 			found = true
+-- 		end
+-- 	end
+--
+-- 	if found then
+-- 		return "Harper LSP disabled"
+-- 	else
+-- 		return "Harper LSP was not running"
+-- 	end
+-- end
 -- Keymap to switch spelling language to English lamw25wmal
 -- To save the language settings configured on each buffer, you need to add
 -- "localoptions" to vim.opt.sessionoptions in the `lua/config/options.lua` file
 vim.keymap.set("n", "<leader>msle", function()
 	vim.opt.spelllang = "en"
 	vim.cmd("echo 'Spell language set to English'")
+	vim.cmd("LspRestart harper_ls")
 end, { desc = "[P]Spelling language English" })
 
 -- Keymap to switch spelling language to Norwegian lamw25wmal
 vim.keymap.set("n", "<leader>msln", function()
 	vim.opt.spelllang = "nb"
 	vim.cmd("echo 'Spell language set to Norwegian'")
+	disable_harper() -- Disable Harper LSP for Norwegian as it's not supported
 end, { desc = "[P]Spelling language Norwegian" })
 
 -- HACK: neovim spell multiple languages
@@ -407,6 +391,7 @@ end, { desc = "[P]Spelling language Norwegian" })
 vim.keymap.set("n", "<leader>mslb", function()
 	vim.opt.spelllang = "en,nb"
 	vim.cmd("echo 'Spell language set to Norwegian and English'")
+	disable_harper() -- Disable Harper LSP for Norwegian as it's not supported
 end, { desc = "[P]Spelling language Norwegian and English" })
 
 -- Show spelling suggestions / spell suggestions
