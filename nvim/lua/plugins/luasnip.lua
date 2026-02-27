@@ -665,11 +665,13 @@ return {
 		-- #####################################################################
 		ls.add_snippets("all", {
 			s({
-				trig = "linkarzu",
-				name = "Add this -> A special thanks to linkarzu for providing this in his dotfiles",
-				desc = "Add this -> A special thanks to linkarzu for providing this in his dotfiles",
+				trig = "credits",
+				name = "Add this -> A special thanks to $name for providing his dotfiles",
+				desc = "Add this -> A special thanks to $name for providing his dotfiles",
 			}, {
-				t("A special thanks to linkarzu for providing this in his dotfiles"),
+				t("A special thanks to "),
+				i(1),
+				t(" for providing this in his dotfiles"),
 			}),
 		})
 		return opts
