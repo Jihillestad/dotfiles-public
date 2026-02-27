@@ -18,7 +18,7 @@ local config = wezterm.config_builder()
 -- Font settings
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 21
+config.font_size = 19
 config.line_height = 1.2
 
 -- Appearance

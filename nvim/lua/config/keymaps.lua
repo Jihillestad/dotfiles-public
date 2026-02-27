@@ -348,27 +348,8 @@ local function disable_harper()
 		vim.cmd("echo 'Harper LSP was not running'")
 	end
 end
--- local function disable_harper()
--- 	local get_clients = vim.lsp.get_clients or vim.lsp.get_active_clients
--- 	local bufnr = vim.api.nvim_get_current_buf()
--- 	local clients = get_clients({ bufnr = bufnr })
---
--- 	local found = false
--- 	for _, client in ipairs(clients) do
--- 		-- Match harper_ls or any variation
--- 		if client.name:match("harper") then
--- 			vim.lsp.buf_detach_client(bufnr, client.id)
--- 			found = true
--- 		end
--- 	end
---
--- 	if found then
--- 		return "Harper LSP disabled"
--- 	else
--- 		return "Harper LSP was not running"
--- 	end
--- end
--- Keymap to switch spelling language to English lamw25wmal
+
+-- Keymap to switch spelling language to English
 -- To save the language settings configured on each buffer, you need to add
 -- "localoptions" to vim.opt.sessionoptions in the `lua/config/options.lua` file
 vim.keymap.set("n", "<leader>msle", function()
@@ -377,7 +358,7 @@ vim.keymap.set("n", "<leader>msle", function()
 	vim.cmd("LspRestart harper_ls")
 end, { desc = "[P]Spelling language English" })
 
--- Keymap to switch spelling language to Norwegian lamw25wmal
+-- Keymap to switch spelling language to Norwegian
 vim.keymap.set("n", "<leader>msln", function()
 	vim.opt.spelllang = "nb"
 	vim.cmd("echo 'Spell language set to Norwegian'")
