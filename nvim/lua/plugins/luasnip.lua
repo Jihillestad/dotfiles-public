@@ -249,17 +249,6 @@ return {
 			})
 		)
 
-		table.insert(
-			snippets,
-			s({
-				trig = "vid",
-				name = "Add Vid-Id tag",
-				desc = "Add Vid-Id tag",
-			}, {
-				t("Vid-Id"),
-			})
-		)
-
 		-- Paste clipboard contents in link section, move cursor to ()
 		table.insert(
 			snippets,
@@ -328,209 +317,6 @@ return {
 			})
 		)
 
-		table.insert(
-			snippets,
-			s({
-				trig = "supportme",
-				name = "Inserts links (Ko-fi, Twitter, TikTok)",
-				desc = "Inserts links (Ko-fi, Twitter, TikTok)",
-			}, {
-				t({
-					"Join discord for free -> https://discord.gg/NgqMgwwtMH",
-					"If you want to support me by becoming a YouTube member",
-					"https://www.youtube.com/channel/UCrSIvbFncPSlK6AdwE2QboA/join",
-					"☕ Support me -> https://ko-fi.com/linkarzu",
-					"☑ My Twitter -> https://x.com/link_arzu",
-					"❤‍🔥 My tiktok -> https://www.tiktok.com/@linkarzu",
-					"My dotfiles (remember to star them) -> https://github.com/linkarzu/dotfiles-latest",
-					"A link to my resume -> https://resume.linkarzu.com/",
-				}),
-			})
-		)
-
-		table.insert(
-			snippets,
-			s({
-				trig = "discord",
-				name = "discord support",
-				desc = "discord support",
-			}, {
-				t({
-					"```txt",
-					"I have a members only discord, it's goal is to troubleshoot stuff related to my videos, and try to help users out",
-					"If you want to join, the link can be found below",
-					"https://www.youtube.com/channel/UCrSIvbFncPSlK6AdwE2QboA/join",
-					"```",
-				}),
-			})
-		)
-
-		-- Add a snippet for inserting a blogpost article template
-		table.insert(
-			snippets,
-			s({
-				trig = "blogposttemplate",
-				name = "Insert blog post template",
-				desc = "Insert blog post template with frontmatter and sections",
-			}, {
-				t({ "---", "title: " }),
-				i(1, ""),
-				t({ "", "description: " }),
-				i(2, ""),
-				t({
-					"",
-					"image:",
-					"  path: ./../../assets/img/imgs/250117-thux-simple-bar-sketchybar.avif",
-					"date: '2026-",
-				}),
-				i(3, ""),
-				t({ " 06:10:00 +0000'" }),
-				t({
-					"",
-					"categories:",
-					"  - ",
-				}),
-				i(4, ""),
-				t({
-					"",
-					"tags:",
-					"  - ",
-				}),
-				i(5, ""),
-				t({
-					"",
-					"  - tutorial",
-					"  - youtube",
-					"  - video",
-					"---",
-					"## Contents",
-					"",
-					"### Table of contents",
-					"",
-					"<!-- toc -->",
-					"",
-					"<!-- tocstop -->",
-					"",
-					"## YouTube video",
-					"",
-					"{% include embed/youtube.html id='' %}",
-					"Paste thumbnail here",
-				}),
-				i(6, ""),
-				t({
-					"",
-					"",
-					"## Pre-requisites",
-					"",
-					"- List any here",
-					"",
-					"## Community-driven promotion",
-					"",
-					"Do you want to promote yourself in my channel? I'm not talking about a company",
-					"like notion, brilliant, and all those other ones we're using to seeing. I'm",
-					"talking about you as a person, do you have a project, course, youtube channel or",
-					"product and trying to reach an audience?",
-					"",
-					'If interested, pricing and all the details can be found [in this other page](https://chirpy.home.linkarzu.com/about/#community-driven-promotion){:target="_blank"}',
-					"",
-					"## You're a fraud, why do you ask for money, isn't YouTube Ads enough?",
-					"",
-					'- I explain all of this in the "about me page" link below:',
-					'  - [youre-a-fraud-why-do-you-ask-for-money-isnt-youtube-ads-enough](https://linkarzu.com/about/#youre-a-fraud-why-do-you-ask-for-money-isnt-youtube-ads-enough){:target="_blank"}',
-					"  - Above you'll also find links to my discord, social media, etc",
-					"",
-				}),
-			})
-		)
-
-		-- Add a snippet for inserting a video markdown template
-		table.insert(
-			snippets,
-			s({
-				trig = "videotemplate",
-				name = "Insert video markdown template",
-				desc = "Insert video markdown template",
-			}, {
-				t("## "),
-				i(1, "cursor"),
-				t(" video"),
-				t({ "", "", "All of the details and the demo are covered in the video:", "" }),
-				t({ "", "If you don't like watching videos, the keymaps are in " }),
-				t("[my dotfiles](https://github.com/linkarzu/dotfiles-latest)"),
-				t({
-					"",
-					"",
-					"```txt",
-					"Members only discord",
-					"https://www.youtube.com/channel/UCrSIvbFncPSlK6AdwE2QboA/join",
-					"",
-					"If you find this video helpful and want to support me",
-					"https://ko-fi.com/linkarzu",
-					"",
-					"Follow me on twitter",
-					"https://x.com/link_arzu",
-					"",
-					"My dotfiles (remember to star them)",
-					"https://github.com/linkarzu/dotfiles-latest",
-					"",
-					"Videos mentioned in this video:",
-					"",
-					"#linkarzu",
-					"",
-					"1:00 - VIDEO video 1",
-					"2:00 - VIDEO video 2",
-					"```",
-					"",
-					"Video timeline:",
-					"",
-					"```txt",
-					"0:00 -",
-					"```",
-					"",
-					"```txt",
-					"Join discord for free -> https://discord.gg/NgqMgwwtMH",
-					"If you want to support me by becoming a YouTube member",
-					"https://www.youtube.com/channel/UCrSIvbFncPSlK6AdwE2QboA/join",
-					"☕ Support me -> https://ko-fi.com/linkarzu",
-					"☑ My Twitter -> https://x.com/link_arzu",
-					"❤‍🔥 My tiktok -> https://www.tiktok.com/@linkarzu",
-					"Start your setap free trial (my affiliate link)",
-					"setapp.sjv.io/QjKK1a",
-					"Start your 1password trial  (my affiliate link)",
-					"https://www.dpbolvw.net/click-101327218-15917064",
-					"My dotfiles (remember to star them) -> https://github.com/linkarzu/dotfiles-latest",
-					"A link to my resume -> https://resume.linkarzu.com/",
-					"```",
-					"",
-				}),
-			})
-		)
-
-		table.insert(
-			snippets,
-			s({
-				trig = "video-skitty",
-				name = "New video in skitty-notes",
-				desc = "New video in skitty-notes",
-			}, {
-				t("## "),
-				i(1, "video name"),
-				t({
-					"",
-					"",
-					"- [ ] ",
-				}),
-				i(2, ""), -- This is now the second jump point
-				t({
-					"",
-					"- [ ] **Thank supporters**",
-					"- [ ] Push GitHub changes",
-					"- [ ] Share discord server",
-					"",
-				}),
-			})
-		)
-
 		-- Basic bash script template
 		table.insert(
 			snippets,
@@ -576,8 +362,112 @@ return {
 
 		ls.add_snippets("markdown", snippets)
 
-		-- -- Make Typst inherit Markdown snippets
-		-- ls.filetype_extend("typst", { "markdown" })
+		-- =========================================================================
+		-- Start LaTeX Section
+		-- =========================================================================
+
+		-- Snippets for LaTexX files
+		ls.add_snippets("tex", {
+			-- moderncv
+			s({
+				trig = "projectexp",
+				name = "[moderncv]Add a Project",
+				desc = "[moderncv]Add a Project to your CV",
+			}, {
+				t({
+					"\\cventry{",
+				}),
+				i(1, "Year"),
+				t({ "}{" }),
+				i(2, "Role"),
+				t({ "}{" }),
+				i(3, "PName"),
+				t({ "}{" }),
+				i(4, "Company"),
+				t({ "}{" }),
+				i(5, "City/Country"),
+				t({ "}" }),
+				t({
+					"",
+					"{",
+					" \\begin{itemize}",
+					"   \\item{\\textbf{",
+				}),
+				i(6, "Responsibility"),
+				t({ ":} " }),
+				i(7, "Details"),
+				t({ "}" }),
+				t({
+					"",
+					" \\end{itemize}",
+					"}",
+				}),
+			}),
+			s({
+				trig = "projitem",
+				name = "[moderncv]Project Item",
+				desc = "[moderncv]Add a bullet point to add more responsibilities to the project",
+			}, {
+				t({ "\\item{\\textbf{" }),
+				i(1, "Responsibility"),
+				t({ ":} " }),
+				i(2, "Details"),
+				t({ "}" }),
+			}),
+			s({
+				trig = "workexp",
+				name = "[moderncv]Work Experience",
+				desc = "[moderncv]Add Work Experience to your CV",
+			}, {
+				t({
+					"\\cventry{",
+				}),
+				i(1, "Year"),
+				t({ "}{" }),
+				i(2, "Role"),
+				t({ "}{" }),
+				i(3, "Company"),
+				t({ "}{" }),
+				i(4, "City/Country"),
+				t({ "}{}" }),
+				t({
+					"",
+					"{",
+				}),
+				i(5, "Summary"),
+				t({ "}" }),
+			}),
+			s({
+				trig = "cvlang",
+				name = "[moderncv]Language",
+				desc = "[moderncv]Add a language to your CV",
+			}, {
+				t({ "\\cvcolumn{}{\\textbf{" }),
+				i(1, "Language"),
+				t({ ":} " }),
+				i(2, "Proficiency"),
+				t({ "}" }),
+			}),
+			s({
+				trig = "cvref",
+				name = "[moderncv]Reference",
+				desc = "[moderncv]Add a reference to your CV",
+			}, {
+				t({ "\\item{" }),
+				i(1, "name"),
+				t({ ", " }),
+				i(2, "position"),
+				t({ ", " }),
+				i(3, "phone number"),
+				t({ ", " }),
+				i(4, "email address"),
+				t({ "}" }),
+			}),
+		})
+
+		-- =========================================================================
+		-- End LaTeX Section
+		-- =========================================================================
 
 		-- #####################################################################
 		--                            Lua

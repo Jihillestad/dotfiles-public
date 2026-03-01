@@ -49,7 +49,7 @@ return {
 		-- Merge custom sources with the existing ones from lazyvim
 		-- NOTE: by default lazyvim already includes the lazydev source, so not adding it here again
 		opts.sources = vim.tbl_deep_extend("force", opts.sources or {}, {
-			default = { "lsp", "path", "snippets", "buffer", "emoji", "dictionary", "copilot" },
+			default = { "lsp", "path", "snippets", "buffer", "emoji", "dictionary" },
 			providers = {
 				lsp = {
 					name = "lsp",
@@ -190,13 +190,13 @@ return {
 						-- end,
 					},
 				},
-				-- Copilot
-				copilot = {
-					name = "copilot",
-					module = "blink-cmp-copilot",
-					score_offset = -100, -- the higher the number, the higher the priority
-					async = true,
-				},
+				-- Copilot, using too much memory on my old Mac
+				-- copilot = {
+				-- 	name = "copilot",
+				-- 	module = "blink-cmp-copilot",
+				-- 	score_offset = -100, -- the higher the number, the higher the priority
+				-- 	async = true,
+				-- },
 			},
 		})
 
