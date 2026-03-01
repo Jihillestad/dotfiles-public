@@ -194,7 +194,7 @@ return {
 				copilot = {
 					name = "copilot",
 					module = "blink-cmp-copilot",
-					score_offset = 100, -- the higher the number, the higher the priority
+					score_offset = -100, -- the higher the number, the higher the priority
 					async = true,
 				},
 			},
