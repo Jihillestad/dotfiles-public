@@ -6,4 +6,5 @@
 
 return {
 	{ "akinsho/bufferline.nvim", enabled = false },
+	{ "zbirenbaum/copilot.lua", enabled = false },
 }
