@@ -9,7 +9,7 @@
 
 -- Connect to Wezterm API and other modules
 local wezterm = require("wezterm")
--- local constants = require("constants")
+local constants = require("constants")
 local commands = require("commands")
 
 -- This will hold the configuration
@@ -43,8 +43,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
--- config.window_background_image = constants.bg_image
--- config.window_background_opacity = 0.9
+config.window_background_image = constants.bg_image
 config.macos_window_background_blur = 40
 
 -- Miscellaneous settings

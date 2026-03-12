@@ -5,7 +5,7 @@
 -- file addes overrides for linting on top of LazyVim's default setup for the
 -- plugin.
 -- Credits: A special thanks to linkarzu for providing this in his dotfiles.
--- Sources:
+-- Sources:25k25k
 -- - http://github.com/mfussenegger/nvim-lint
 -- - http://github.com/linkarzu/dotfiles-latest
 -- =============================================================================
@@ -55,6 +55,10 @@ return {
 			["markdownlint-cli2"] = {
 				args = { "--config", cfg_path, "--" },
 			},
+		},
+		linters_by_ft = {
+			terraform = { "tflint" },
+			tf = { "tflint" },
 		},
 	},
 }

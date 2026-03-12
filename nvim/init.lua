@@ -1,4 +1,4 @@
-require("config.lazy")
+ require("config.lazy")
 
 -- bullets.vim has a known issue where it can interfere with the new snacks
 -- picker by folke, preventing you from selecting a file with <CR> when in
