@@ -14,7 +14,7 @@ return {
 		keys = {
 			-- I use this keymap with mini.files, but snacks explorer was taking over
 			-- https://github.com/folke/snacks.nvim/discussions/949
-			{ "<leader>e", false },
+			-- { "<leader>e", false },
 			{
 				"<leader>sg",
 				function()
@@ -167,6 +167,39 @@ return {
 					file = {
 						filename_first = true, -- display filename before the file path
 						truncate = 80,
+					},
+				},
+				-- https://github.com/folke/snacks.nvim/blob/main/docs/lazygit.md
+				lazygit = {
+					theme = {
+						selectedLineBgColor = { bg = "CursorLine" },
+					},
+					-- With this I make lazygit to use the entire screen, because by default there's
+					-- "padding" added around the sides
+					-- I asked in LazyGit, folke didn't like it xD xD xD
+					-- https://github.com/folke/snacks.nvim/issues/719
+					win = {
+						-- -- The first option was to use the "dashboard" style, which uses a
+						-- -- 0 height and width, see the styles documentation
+						-- -- https://github.com/folke/snacks.nvim/blob/main/docs/styles.md
+						-- style = "dashboard",
+						-- But I can also explicitly set them, which also works, what the best
+						-- way is? Who knows, but it works
+						width = 0,
+						height = 0,
+					},
+				},
+				notifier = {
+					enabled = true,
+					top_down = false, -- place notifications from top to bottom
+				},
+				-- This keeps the image on the top right corner, basically leaving your
+				-- text area free, suggestion found in reddit by user `Redox_ahmii`
+				-- https://www.reddit.com/r/neovim/comments/1irk9mg/comment/mdfvk8b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+				styles = {
+					snacks_image = {
+						relative = "editor",
+						col = -1,
 					},
 				},
 			},

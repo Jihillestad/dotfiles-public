@@ -11,6 +11,7 @@ local M = {}
 M.bg_blurry = os.getenv("HOME") .. "/repos/github.com/jihillestad/dotfiles/wezterm/assets/bg-blurry.png"
 M.bg_blurry_darker = os.getenv("HOME") .. "/repos/github.com/jihillestad/dotfiles/wezterm/assets/bg-blurry-darker.png"
 M.bg_blurry_darkest = os.getenv("HOME") .. "/repos/github.com/jihillestad/dotfiles/wezterm/assets/bg-blurry-darkest.png"
-M.bg_image = M.bg_blurry_darkest
+M.bg_baldursgate31 = os.getenv("HOME") .. "/repos/github.com/jihillestad/dotfiles/wezterm/assets/Baldursgate31.jpeg"
+M.bg_image = M.bg_baldursgate31
 
 return M
