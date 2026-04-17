@@ -3,7 +3,7 @@ return {
 		"LazyVim/LazyVim",
 		opts = {
 			-- catppuccin catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-			-- colorscheme = "catppuccin",
+			-- colorscheme = "catppuccin-nvim",
 			-- colorscheme = "catppuccin-frappe",
 			-- colorscheme = "Duskfox",
 			-- colorscheme = "Nightfox",
