@@ -20,6 +20,10 @@ local trigger_text = ";"
 
 return {
 	"saghen/blink.cmp",
+	version = "1.*",
+	---@module 'blink.cmp'
+	---@type blink.cmp.Config
+
 	enabled = true,
 	-- In case there are breaking changes and you want to go back to the last
 	-- working release
