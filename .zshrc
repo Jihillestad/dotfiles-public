@@ -1,18 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# If you come from bash you might have to change your $PATH.
-
-# export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$(brew --prefix python)/libexec/bin:$PATH"
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 export SECOND_BRAIN="$HOME/vaults/personal"
 export MODERNCV="$HOME/projects/latex/moderncv"
 export GITUSER="jihillestad"
@@ -23,22 +8,17 @@ export LAB="$GHREPOS/lab"
 export SCRIPTS="$DOTFILES/scripts"
 export EDITOR="/opt/homebrew/bin/nvim"
 
+# Initialize Starship
+eval "$(starship init zsh)"
+
+# Plugins
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Node NVM Path
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh" # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -94,9 +74,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search docker docker-compose kubectl terraform)
-
-source $ZSH/oh-my-zsh.sh
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search docker docker-compose kubectl terraform)
 
 # User configuration
 
@@ -111,22 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh":
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
@@ -175,16 +137,16 @@ alias gr='git remote'
 alias gre='git reset'
 
 # Dockerized Azure CLI
-alias exparm="export ARM_ACCESS_KEY=$(docker exec azure-cli sh -c 'cat /tmp/ARM_ACCESS_KEY.txt')"
+# alias exparm="export ARM_ACCESS_KEY=$(docker exec azure-cli sh -c 'cat /tmp/ARM_ACCESS_KEY.txt')"
 
 # Dockerized Terraform
-alias dtfinit="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest init"
-alias dtfinitrc="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest init -reconfigure"
-alias dtfplan="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest plan -out main.tfplan"
-alias dtfapply="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest apply main.tfplan"
-alias dtfdestroy="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest destroy"
-alias dtfrefresh="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest refresh"
-
+# alias dtfinit="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest init"
+# alias dtfinitrc="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest init -reconfigure"
+# alias dtfplan="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest plan -out main.tfplan"
+# alias dtfapply="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest apply main.tfplan"
+# alias dtfdestroy="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest destroy"
+# alias dtfrefresh="docker run -i -t --rm -v "$(pwd):/workspace" -w /workspace -e ARM_ACCESS_KEY=$ARM_ACCESS_KEY hashicorp/terraform:latest refresh"
+#
 # FZF Aerospace search
 
 ff() {
@@ -207,10 +169,6 @@ alias szr='source ~/.zshrc'
 alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # search for a file with fzf and open it in vim
 alias vf='v "$(fp)"'
-
-# BRUKERNAVN=$(id -F)
-# toilet $BRUKERNAVN -k --width 120 --metal
-# neofetch
 
 #  ---- FZF ----
 
@@ -276,22 +234,6 @@ alias cd="z"
 ### Fix for making Docker plugin work
 autoload -U compinit && compinit
 ###
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
