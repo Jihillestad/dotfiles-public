@@ -29,21 +29,21 @@ truncation_symbol = "…/"
 [git_branch]
 style = "bg:#394260"
 symbol = ""
-format = '[[ $symbol $branch ](fg:#769ff0)]($style)'
+format = '[[ $symbol $branch ](fg:#7aa2f7)]($style)'
 
 [git_status]
 style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0)]($style)'
+format = '[[($all_status$ahead_behind )](fg:#f7768e)]($style)'
 
 [lua]
 symbol = "🌕"
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0)]($style)'
+format = '[[ $symbol ($version) ](fg:#ff899d)]($style)'
 
 [terraform]
 symbol = "󱁢 "
 style = "bg:#212736"
-format = '[[ $symbol$workspace ($version) ](fg:#769ff0)]($style)'
+format = '[[ $symbol$workspace ($version) ](fg:#ff899d)]($style)'
 detect_extensions = ["tf", "tfvars", "hcl"]
 detect_files = [".terraform-version"]
 detect_folders = [".terraform"]
@@ -51,22 +51,22 @@ detect_folders = [".terraform"]
 [nodejs]
 symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0)]($style)'
+format = '[[ $symbol ($version) ](fg:#ff899d)]($style)'
 
 [rust]
 symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0)]($style)'
+format = '[[ $symbol ($version) ](fg:#ff899d)]($style)'
 
 [golang]
 symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0)]($style)'
+format = '[[ $symbol ($version) ](fg:#ff899d)]($style)'
 
 [php]
 symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0)]($style)'
+format = '[[ $symbol ($version) ](fg:#ff899d)]($style)'
 
 [time]
 disabled = false
