@@ -41,7 +41,6 @@ opt.winblend = 10 -- floating window transparency
 -- opt.colorcolumn = "100" -- line length marker at 100 characters
 -- opt.conceallevel = 0 -- Don't hide markup
 -- opt.concealcursor = "" -- Show markup even on cursor line
-opt.lazyredraw = false -- redraw while executing macros (butter UX)
 opt.redrawtime = 10000 -- Timeout for syntax highlighting redraw
 opt.maxmempattern = 20000 -- Max memory for pattern matching
 opt.synmaxcol = 300 -- Syntax highlighting column limit
@@ -88,6 +87,10 @@ opt.encoding = "UTF-8" -- Use UTF-8 encoding
 opt.wildmenu = true -- Enable command-line completion menu
 opt.wildmode = "longest:full,full" -- Completion mode for command-line
 opt.wildignorecase = true -- Case-insensitive tab completion in commands
+
+-- Lazy specific settings
+opt.lazyredraw = false -- redraw while executing macros (butter UX)
+vim.g.snacks_animate = false
 
 -- Cursor Settings
 opt.guicursor = {
