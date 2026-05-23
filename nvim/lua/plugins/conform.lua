@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
 			-- "BufLeave" the delay is not needed
 			vim.defer_fn(function()
 				if vim.api.nvim_buf_is_valid(buf) then
-					require("conform").format({ bufnr = buf })
+					require("conform").format({ bufnr = buf, lsp_format = "never" })
 				end
 			end, 100)
 		end
