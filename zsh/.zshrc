@@ -61,10 +61,10 @@ fi
 # =========================================================
 
 source "$ZDOTDIR/plugins.zsh"
-source "$ZDOTDIR/prompt.zsh"
 source "$ZDOTDIR/aliases.zsh"
 source "$ZDOTDIR/fzf.zsh"
 source "$ZDOTDIR/bindings.zsh"
+source "$ZDOTDIR/prompt.zsh"
 
 
 # =========================================================

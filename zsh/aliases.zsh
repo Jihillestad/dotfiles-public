@@ -71,7 +71,7 @@ alias eb='v ~/.bashrc'
 alias ez='v ~/.zshrc'
 alias ev='cd ~/.config/nvim/ && v init.lua'
 alias sbr='source ~/.bashrc'
-alias szr='source ~/.zshrc'
+alias szr='source $ZDOTDIR/.zshrc'
 
 # ricing (Alacritty)
 # alias alday='sed -i "" "s/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyo-night\.toml\"\]/import = \[\"~\/\.config\/alacritty\/themes\/themes\/tokyonight_day\.toml\"\]/" $DOTFILES/alacritty.toml'

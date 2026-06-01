@@ -9,7 +9,7 @@
 
 -- Connect to Wezterm API and other modules
 local wezterm = require("wezterm")
-local constants = require("constants")
+-- local constants = require("constants")
 local commands = require("commands")
 
 -- This will hold the configuration
@@ -25,6 +25,7 @@ config.line_height = 1.2
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.color_scheme = "tokyonight_night"
+-- config.color_scheme = "Gruvbox Dark (Gogh)"
 config.colors = {
 	-- 	foreground = "#CBE0F0",
 	-- 	background = "#011423",
@@ -43,12 +44,12 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.window_background_image = constants.bg_image
-config.macos_window_background_blur = 40
+-- config.window_background_image = constants.bg_image
+-- config.macos_window_background_blur = 40
 
 -- Miscellaneous settings
 config.max_fps = 120
-config.prefer_egl = true
+config.prefer_egl = false
 config.send_composed_key_when_left_alt_is_pressed = false
 
 -- Custom commands

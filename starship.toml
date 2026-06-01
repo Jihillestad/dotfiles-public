@@ -10,8 +10,6 @@ $terraform\
 $nodejs\
 $rust\
 $golang\
-$php\
-$time\
 \n$character"""
 
 [directory]
@@ -63,13 +61,8 @@ symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#ff899d)]($style)'
 
-[php]
-symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#ff899d)]($style)'
-
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb)]($style)'
+# [time]
+# disabled = false
+# time_format = "%R" # Hour:Minute Format
+# style = "bg:#1d2230"
+# format = '[[  $time ](fg:#a0a9cb)]($style)'

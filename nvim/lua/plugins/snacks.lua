@@ -72,6 +72,7 @@ return {
 		},
 		opts = {
 			words = { enabled = false }, -- I don't use this feature and it causes some issues with the "mini.surround" plugin, so I disable it
+			scroll = { enabled = false }, -- For snappiness
 			picker = {
 				-- My ~/github/dotfiles-latest/neovim/lazyvim/lua/config/keymaps.lua
 				-- file was always showing at the top, I needed a way to decrease its
