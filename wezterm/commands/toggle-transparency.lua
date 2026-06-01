@@ -8,7 +8,7 @@
 -- =============================================================================
 
 local wezterm = require("wezterm")
-local constants = require("constants")
+-- local constants = require("constants")
 
 local command = {
 	brief = "Toggle terminal transparency",
