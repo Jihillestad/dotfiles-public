@@ -2,3 +2,4 @@ lazy-lock.json
 .DS_Store
 .nvm/
 zsh/plugins
+nvim/spell
