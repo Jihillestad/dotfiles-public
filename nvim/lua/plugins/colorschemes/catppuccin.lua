@@ -1,3 +1,12 @@
+-- =============================================================================
+-- Title: catppuccin.lua
+-- File: ~/repos/github.com/jihillestad/dotfiles/nvim/lua/plugins/colorschemes/catppuccin.lua
+-- About: Colorscheme
+-- Credits:
+-- Sources:
+-- - https://github.com/catppuccin/nvim
+-- =============================================================================
+
 return {
 	{
 		"catppuccin/nvim",

@@ -293,19 +293,7 @@ return {
 			})
 		)
 
-		-- Inserting "my dotfiles" link
-		table.insert(
-			snippets,
-			s({
-				trig = "newline",
-				name = "Adds a blank line in markdown file",
-				desc = "Adds a blank line in markdown file",
-			}, {
-				t('<div style="page-break-after: always; visibility: hidden"> pagebreak </div>'),
-			})
-		)
-
-		-- Inserting "my dotfiles" link
+		-- Inserting pagebreak
 		table.insert(
 			snippets,
 			s({

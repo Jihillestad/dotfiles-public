@@ -1,3 +1,12 @@
+-- =============================================================================
+-- Title: andromeda.lua
+-- File: ~/repos/github.com/jihillestad/dotfiles/nvim/lua/plugins/andromeda.lua
+-- About: Colorscheme
+-- Credits:
+-- Sources:
+-- -https://github.com/idr4n/andromeda.nvim
+-- =============================================================================;
+
 return {
 	"idr4n/andromeda.nvim",
 	lazy = false,
