@@ -1,3 +1,11 @@
+-- =============================================================================
+-- Title: colorscheme.lua
+-- File: ~/repos/github.com/jihillestad/dotfiles/nvim/lua/plugins/colorscheme.lua
+-- About: Select Colorscheme
+-- Credits:
+-- Sources:
+-- =============================================================================
+
 return {
 	{
 		"LazyVim/LazyVim",

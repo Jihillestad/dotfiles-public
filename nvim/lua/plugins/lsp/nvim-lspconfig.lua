@@ -28,7 +28,7 @@ return {
 		servers = {
 			["*"] = {
 				keys = {
-					{ "<leader>rs", ":LspRestart<CR>", desc = "Restart LSP" },
+					{ "<leader>rs", ":lsp restart<CR>", desc = "Restart LSP" },
 				},
 			},
 			marksman = {
